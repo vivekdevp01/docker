@@ -1,5 +1,8 @@
 const express=require('express');
+const dotenv=require('dotenv');
+dotenv.config();
 const app = express();
+
 
 
 app.get('/home',(req,res)=>{
@@ -7,6 +10,6 @@ app.get('/home',(req,res)=>{
         message:"running"
     })
 })
-app.listen(3000,()=>{
+app.listen(process.env.PORT,()=>{
     console.log('Server is running on port 3000');
 })
